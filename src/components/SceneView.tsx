@@ -14,10 +14,17 @@ import { JourneyMap } from "@/components/JourneyMap";
 import { MobileDrawer } from "@/components/MobileDrawer";
 import { SaveProgressBar } from "@/components/SaveProgressBar";
 import { clearProgress, loadProgress, saveProgress } from "@/lib/storage";
-import { Choice, clampMeter, endingForState, endings, falsePaths, getInitialProgress, ProgressState, scenes } from "@/lib/story";
+import { Choice, clampMeter, Difficulty, endingForState, endings, falsePaths, getInitialProgress, ProgressState, scenes, sceneTextForDifficulty } from "@/lib/story";
+
+const difficultyOptions: { value: Difficulty; label: string; description: string }[] = [
+  { value: "beginner", label: "Beginner", description: "Clear narration and direct choices" },
+  { value: "medium", label: "Medium", description: "More symbolic narration" },
+  { value: "hard", label: "Hard", description: "Final poetic version" }
+];
 
 export function SceneView() {
   const [progress, setProgress] = useState<ProgressState>(getInitialProgress());
+  const [difficulty, setDifficulty] = useState<Difficulty>("hard");
   const [loaded, setLoaded] = useState(false);
   const [mapOpen, setMapOpen] = useState(false);
   const [inventoryOpen, setInventoryOpen] = useState(false);
@@ -34,6 +41,7 @@ export function SceneView() {
   }, [loaded, progress]);
 
   const scene = scenes.find((item) => item.id === progress.currentScene) ?? scenes[0];
+  const difficultyText = sceneTextForDifficulty(scene, difficulty);
   const activeFalsePath = falsePaths.find((item) => item.id === falsePath);
   const ending = endings.find((item) => item.id === endingId) ?? null;
 
@@ -123,6 +131,30 @@ export function SceneView() {
 
       <div className="mx-auto grid min-h-screen max-w-[1560px] gap-5 px-4 py-20 lg:grid-cols-[300px_minmax(0,1fr)_320px] lg:px-6">
         <aside className="glass-panel hidden rounded-2xl p-5 lg:block">
+          <div className="mb-5">
+            <p className="font-label text-xs uppercase tracking-[0.28em] text-antiqueGold">Difficulty</p>
+            <div className="mt-3 grid gap-2">
+              {difficultyOptions.map((option) => {
+                const active = option.value === difficulty;
+
+                return (
+                  <button
+                    key={option.value}
+                    type="button"
+                    onClick={() => setDifficulty(option.value)}
+                    className={`rounded-lg border px-3 py-3 text-left transition ${
+                      active
+                        ? "border-antiqueGold bg-antiqueGold/15 text-softWhite shadow-gold"
+                        : "border-parchment/12 bg-night/30 text-silverBlue hover:border-antiqueGold/45"
+                    }`}
+                  >
+                    <span className="block font-display text-xl">{option.label}</span>
+                    <span className="mt-1 block text-xs leading-5 text-silverBlue/80">{option.description}</span>
+                  </button>
+                );
+              })}
+            </div>
+          </div>
           <JourneyMap currentScene={progress.currentScene} onSelect={(sceneId) => setProgress((state) => ({ ...state, currentScene: sceneId }))} />
         </aside>
 
@@ -136,6 +168,22 @@ export function SceneView() {
               <PanelRight className="h-4 w-4" />
               Inventory
             </button>
+          </div>
+          <div className="glass-panel grid gap-2 rounded-2xl p-3 sm:grid-cols-3 lg:hidden">
+            {difficultyOptions.map((option) => (
+              <button
+                key={option.value}
+                type="button"
+                onClick={() => setDifficulty(option.value)}
+                className={`rounded-lg border px-3 py-2 text-sm capitalize transition ${
+                  option.value === difficulty
+                    ? "border-antiqueGold bg-antiqueGold/15 text-antiqueGold"
+                    : "border-parchment/12 bg-night/30 text-silverBlue"
+                }`}
+              >
+                {option.label}
+              </button>
+            ))}
           </div>
 
           <AnimatePresence mode="wait">
@@ -156,6 +204,9 @@ export function SceneView() {
                   <span className="rounded-full border border-antiqueGold/40 px-3 py-1 font-label text-[10px] uppercase tracking-[0.24em] text-antiqueGold">
                     Act {scene.id}
                   </span>
+                  <span className="rounded-full border border-antiqueGold/40 bg-antiqueGold/10 px-3 py-1 font-label text-[10px] uppercase tracking-[0.24em] text-antiqueGold">
+                    {difficulty} mode
+                  </span>
                   <span className="rounded-full border border-parchment/15 px-3 py-1 text-xs text-silverBlue">
                     Archive {archiveCount}
                   </span>
@@ -163,13 +214,13 @@ export function SceneView() {
                 <h1 className="mt-5 font-display text-5xl leading-none text-softWhite md:text-7xl">{scene.title}</h1>
                 <p className="mt-2 font-label text-xs uppercase tracking-[0.3em] text-antiqueGold">{scene.imageTitle}</p>
                 <blockquote className="mt-6 border-l border-antiqueGold/60 pl-4 font-display text-2xl italic text-parchment">
-                  {scene.quote}
+                  {difficultyText.quote}
                 </blockquote>
-                <p className="mt-6 max-w-3xl text-lg leading-8 text-silverBlue">{scene.story}</p>
+                <p className="mt-6 max-w-3xl text-lg leading-8 text-silverBlue">{difficultyText.story}</p>
 
                 <div className="mt-8 grid gap-3">
                   {scene.choices.map((choice) => (
-                    <ChoiceCard key={choice.id} choice={choice} onChoose={choose} />
+                    <ChoiceCard key={choice.id} choice={choice} label={difficultyText.choices[choice.id]} onChoose={choose} />
                   ))}
                 </div>
               </div>

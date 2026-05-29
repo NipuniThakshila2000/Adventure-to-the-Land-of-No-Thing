@@ -1,5 +1,7 @@
 export type MeterKey = "grip" | "wonder" | "surrender" | "certainty" | "vision" | "return";
 
+export type Difficulty = "beginner" | "medium" | "hard";
+
 export type ChoiceEffect = Partial<Record<MeterKey, number>>;
 
 export type Choice = {
@@ -68,9 +70,9 @@ export const scenes: Scene[] = [
     slug: "university-of-names",
     title: "The University of Names",
     imageTitle: "The First Map of Meaning",
-    quote: "The entrance is not hidden by stone. It is hidden by meaning.",
+    quote: "The entrance is not hidden by stone. It is hidden by meaning, like a gate seen only after prayer.",
     story:
-      "At St. Anselm's College, Elias Vale receives the final page of Dr. Arthur Sinclair's journal. The page does not describe coordinates. It describes names hardening around reality until the Stairway can no longer be seen.",
+      "At St. Anselm's College, Elias Vale receives the final page of Dr. Arthur Sinclair's journal. The page does not describe coordinates. It describes names hardening around reality until the Stairway can no longer be seen, like Babel rebuilt inside the mind.",
     image: "/images/scenes/scene-01-university-of-names.png",
     mood: "peaceful",
     music: "/audio/peaceful-alonia.mpeg",
@@ -88,9 +90,9 @@ export const scenes: Scene[] = [
     slug: "desert-of-false-names",
     title: "The Desert of False Names",
     imageTitle: "The Camp of Misnamed Things",
-    quote: "The label was useful until Elias mistook it for a soul.",
+    quote: "The label was useful until Elias mistook it for a soul, forgetting Adam named the creatures without owning them.",
     story:
-      "The abandoned camp lies under a silver desert sky. Every crate is mislabeled. A lamp is called a relic, a lyre is listed as a weapon, and a doorway sleeps under sand with no name at all.",
+      "The abandoned camp lies under a silver desert sky like a wilderness of false testimony. Every crate is mislabeled. A lamp is called a relic, a lyre is listed as a weapon, and a doorway sleeps under sand with no name at all.",
     image: "/images/scenes/scene-02-desert-of-false-names.png",
     mood: "dark",
     music: "/audio/dark-secrets.mpeg",
@@ -108,9 +110,9 @@ export const scenes: Scene[] = [
     slug: "hall-of-objects",
     title: "The Hall of Objects",
     imageTitle: "Relics of the Bound Self",
-    quote: "A thing becomes a prison when the hand refuses to open.",
+    quote: "A thing becomes a prison when the hand refuses to open, as manna spoils when hoarded.",
     story:
-      "Pedestals hold ordinary objects: a cup, a rope, a compass, a watch, a mirror, a sealed letter, an old Bible, a skull, and a blank stone. Meaning gathers around each one like dust around a relic.",
+      "Pedestals hold ordinary objects: a cup, a rope, a compass, a watch, a veiled glass, a sealed letter, an old Bible, a skull, and a blank stone. Meaning gathers around each one like dust around a relic.",
     image: "/images/scenes/scene-03-hall-of-objects.png",
     mood: "peaceful",
     music: "/audio/peaceful-calming-crystals.mpeg",
@@ -128,13 +130,13 @@ export const scenes: Scene[] = [
     slug: "mirror-without-face",
     title: "The Mirror Without a Face",
     imageTitle: "The Names That Look Back",
-    quote: "The mirror did not show Elias. It showed the names he obeyed.",
+    quote: "The veiled glass did not show Elias. It showed the names he obeyed.",
     story:
-      "A black mirror rises like a threshold. Explorer. Orphan. Scholar. Son. Failure. Believer. Skeptic. Body. Mind. Elias. Each name asks to become the whole man.",
+      "A darkened bronze glass rises like a threshold, recalling how Paul wrote that we see through a glass dimly. Explorer. Orphan. Scholar. Son. Failure. Believer. Skeptic. Body. Mind. Elias. Each name asks to become the whole man.",
     image: "/images/scenes/scene-04-mirror-without-face.png",
     mood: "dark",
     music: "/audio/dark-how-did-we-get-here.mpeg",
-    objects: ["Black mirror", "Dissolving names"],
+    objects: ["Darkened bronze glass", "Dissolving names"],
     choices: [
       { id: "explorer", text: "Choose Explorer.", effect: { grip: 10, certainty: 8 }, tendency: "Heroic identity", falsePathId: "heros-road" },
       { id: "son", text: "Choose Son.", effect: { grip: 10, vision: 6 }, tendency: "Inherited grief", falsePathId: "fathers-watch" },
@@ -148,9 +150,9 @@ export const scenes: Scene[] = [
     slug: "shallow-void",
     title: "The Shallow Void",
     imageTitle: "The Threshold of Passing Visions",
-    quote: "Not every radiant thing has asked to be followed.",
+    quote: "Not every radiant thing has asked to be followed; even light must be tested.",
     story:
-      "The Shallow Void fills with half-formed cities, lost rooms, angelic silhouettes, and Sinclair's voice in the mist. Visions appear with the force of truth, then tremble as if waiting to be gripped.",
+      "The Shallow Void fills with half-formed cities, lost rooms, angelic silhouettes, and Sinclair's voice in the mist. Visions appear with the force of truth, like dreams before Pharaoh, then tremble as if waiting to be gripped.",
     image: "/images/scenes/scene-05-shallow-void.png",
     mood: "dark",
     music: "/audio/dark-margin.mpeg",
@@ -168,9 +170,9 @@ export const scenes: Scene[] = [
     slug: "no-thing",
     title: "NO-Thing",
     imageTitle: "The Place Before the Name",
-    quote: "Every word disappeared. The silence did not.",
+    quote: "Every word disappeared. The silence did not; it waited like the still small voice.",
     story:
-      "Elias enters the place before naming. No temple stands there, yet every temple feels possible. His notebook drinks the ink from each word until the page is blank and luminous.",
+      "Elias enters the place before naming. No temple stands there, yet every temple feels possible. His notebook drinks the ink from each word until the page is blank and luminous, like stone before the commandment is carved.",
     image: "/images/scenes/scene-06-no-thing.png",
     mood: "peaceful",
     music: "/audio/peaceful-ocean-reefs.mpeg",
@@ -190,7 +192,7 @@ export const scenes: Scene[] = [
     imageTitle: "The Ascent and the Descent",
     quote: "Ascent without descent is escape. Descent without ascent is imprisonment.",
     story:
-      "At the foot of a stairway made of stone and light, Sinclair waits older and peaceful. The Stairway rises and descends at once. Elias understands that the journey was never away from the world, but through it.",
+      "At the foot of a stairway made of stone and light, Sinclair waits older and peaceful. Like Jacob's ladder, the Stairway rises and descends at once. Elias understands that the journey was never away from the world, but through it.",
     image: "/images/scenes/scene-07-stairway-of-sinclair.png",
     mood: "peaceful",
     music: "/audio/peaceful-woodwind-reviere.mpeg",
@@ -315,6 +317,185 @@ export const archiveFragments = [
   "Journal fragment: The shallow void flatters every unfinished desire.",
   "Object: The blank stone, heavy only when named."
 ];
+
+type DifficultySceneText = {
+  quote: string;
+  story: string;
+  choices: Record<string, string>;
+};
+
+const beginnerSceneText: Record<number, DifficultySceneText> = {
+  1: {
+    quote: "Sinclair's page is not a map. It is a warning that names can hide truth.",
+    story: "Elias finds Sinclair's final journal page at St. Anselm's College. It says the Stairway is hidden when people cling too tightly to labels, proof, and control.",
+    choices: {
+      archaeology: "Study the notes carefully as clues.",
+      symbols: "Look for spiritual meaning in the notes.",
+      ravings: "Dismiss the notes as nonsense.",
+      prayer: "Read the notes aloud as prayer.",
+      "hidden-ink": "Burn a page to search for secret writing."
+    }
+  },
+  2: {
+    quote: "The camp teaches Elias that a name is useful, but it is not the whole truth.",
+    story: "In the desert camp, many objects have the wrong labels. Elias must decide whether to trust the labels or look more humbly at what is really there.",
+    choices: {
+      "official-labels": "Trust the official labels.",
+      "remove-labels": "Remove the labels and look again.",
+      unknown: "Open the crate marked Unknown.",
+      "private-journal": "Search for Sinclair's private journal.",
+      "local-guide": "Ask the local guide for wisdom."
+    }
+  },
+  3: {
+    quote: "Objects can help Elias, but they can also trap him if he clings to them.",
+    story: "A hall displays a watch, compass, Bible, letter, and blank stone. Each object tests whether Elias can hold meaning lightly instead of turning it into an idol.",
+    choices: {
+      watch: "Hold tightly to the father's watch.",
+      "feather-compass": "Release control over the compass.",
+      "feather-bible": "Read the Bible with humility.",
+      letter: "Open the sealed letter.",
+      "blank-stone": "Stand quietly before the blank stone."
+    }
+  },
+  4: {
+    quote: "Elias sees the identities that try to control him.",
+    story: "A dim bronze glass shows Elias many names: Explorer, Son, Believer, Failure. He must decide whether to cling to one name or let God see him beyond all labels.",
+    choices: {
+      explorer: "Define yourself as Explorer.",
+      son: "Define yourself as Son.",
+      believer: "Define yourself as Believer.",
+      failure: "Define yourself as Failure.",
+      watch: "Watch the names without choosing one."
+    }
+  },
+  5: {
+    quote: "Not every vision should be followed.",
+    story: "The void shows Elias beautiful and frightening visions. Some may teach him, but chasing them too strongly can lead him away from truth.",
+    choices: {
+      "sinclair-voice": "Chase Sinclair's voice.",
+      "father-image": "Follow the image of Elias's father.",
+      record: "Write down every vision as proof.",
+      ignore: "Reject every vision.",
+      pass: "Let the visions appear and pass."
+    }
+  },
+  6: {
+    quote: "Elias reaches silence before words.",
+    story: "In NO-Thing, words disappear from Elias's notebook. This scene asks whether he will try to control mystery or surrender quietly.",
+    choices: {
+      "write-god": "Try to write God.",
+      "write-void": "Try to write Void.",
+      "write-truth": "Try to write Truth.",
+      "write-i": "Try to write I.",
+      "stop-writing": "Stop writing and surrender."
+    }
+  },
+  7: {
+    quote: "The Stairway is not an escape. It is a way to return changed.",
+    story: "Sinclair waits at the Stairway of stone and light. Elias must choose whether to escape upward, possess the mystery, or return to the world with humility.",
+    choices: {
+      stay: "Stay in NO-Thing.",
+      ascend: "Ascend and never return.",
+      descend: "Descend with Sinclair.",
+      map: "Try to make a final map.",
+      shrine: "Build a shrine and guard it.",
+      world: "Return to help others find the way."
+    }
+  }
+};
+
+const mediumSceneText: Record<number, DifficultySceneText> = {
+  1: {
+    quote: "A gate can vanish beneath the names laid over it.",
+    story: "Sinclair's last page gives Elias no coordinates. It suggests that the Stairway has been covered by the names people use to master reality.",
+    choices: {
+      archaeology: "Read the page as evidence.",
+      symbols: "Read the page as symbol.",
+      ravings: "Call the page broken.",
+      prayer: "Speak the page as prayer.",
+      "hidden-ink": "Risk the page for hidden fire."
+    }
+  },
+  2: {
+    quote: "The false label is not the false thing.",
+    story: "In the desert camp, names have been placed badly on useful things. Elias must decide whether to trust order or see beneath it.",
+    choices: {
+      "official-labels": "Keep the official order.",
+      "remove-labels": "Let the objects stand unnamed.",
+      unknown: "Open what is unnamed.",
+      "private-journal": "Seek Sinclair's hidden account.",
+      "local-guide": "Ask what came before the foreign names."
+    }
+  },
+  3: {
+    quote: "The hand makes relics heavy.",
+    story: "Ordinary objects wait on pedestals. Each can guide Elias, but each can also become a small golden calf.",
+    choices: {
+      watch: "Keep the watch close.",
+      "feather-compass": "Lighten the compass.",
+      "feather-bible": "Let scripture breathe.",
+      letter: "Break the seal.",
+      "blank-stone": "Wait before the blank stone."
+    }
+  },
+  4: {
+    quote: "The dim glass gives back borrowed names.",
+    story: "The bronze surface returns Elias as titles and wounds. Each name offers a throne, and each throne asks for worship.",
+    choices: {
+      explorer: "Take Explorer.",
+      son: "Take Son.",
+      believer: "Take Believer.",
+      failure: "Take Failure.",
+      watch: "Let the names pass."
+    }
+  },
+  5: {
+    quote: "Radiance is not always revelation.",
+    story: "Images rise with sacred force. Elias must learn which lights guide him and which only flatter hunger.",
+    choices: {
+      "sinclair-voice": "Follow Sinclair's voice.",
+      "father-image": "Follow the father image.",
+      record: "Bind every vision into proof.",
+      ignore: "Strike the visions away.",
+      pass: "Let each vision pass."
+    }
+  },
+  6: {
+    quote: "Before the word, the silence remains.",
+    story: "The page goes blank in Elias's hand. Every word he reaches for becomes a way to possess what cannot be possessed.",
+    choices: {
+      "write-god": "Name the holy.",
+      "write-void": "Name the absence.",
+      "write-truth": "Name the final truth.",
+      "write-i": "Name the self.",
+      "stop-writing": "Leave the page blank."
+    }
+  },
+  7: {
+    quote: "Jacob's ladder rises only because it also touches earth.",
+    story: "Sinclair waits where ascent and descent meet. Elias can flee, claim, worship the threshold, or return changed.",
+    choices: {
+      stay: "Remain above the world.",
+      ascend: "Rise without return.",
+      descend: "Go down with Sinclair.",
+      map: "Fix the Stairway into a map.",
+      shrine: "Guard the entrance as holy property.",
+      world: "Carry the Stairway back into life."
+    }
+  }
+};
+
+export function sceneTextForDifficulty(scene: Scene, difficulty: Difficulty): DifficultySceneText {
+  if (difficulty === "beginner") return beginnerSceneText[scene.id];
+  if (difficulty === "medium") return mediumSceneText[scene.id];
+
+  return {
+    quote: scene.quote,
+    story: scene.story,
+    choices: Object.fromEntries(scene.choices.map((choice) => [choice.id, choice.text]))
+  };
+}
 
 export function getInitialProgress(): ProgressState {
   return {

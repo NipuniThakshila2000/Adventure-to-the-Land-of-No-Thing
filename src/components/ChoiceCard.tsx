@@ -6,10 +6,11 @@ import { Choice } from "@/lib/story";
 
 type Props = {
   choice: Choice;
+  label?: string;
   onChoose: (choice: Choice) => void;
 };
 
-export function ChoiceCard({ choice, onChoose }: Props) {
+export function ChoiceCard({ choice, label, onChoose }: Props) {
   return (
     <motion.button
       type="button"
@@ -20,7 +21,7 @@ export function ChoiceCard({ choice, onChoose }: Props) {
     >
       <span className="flex items-start justify-between gap-4">
         <span>
-          <span className="block font-display text-xl leading-tight text-softWhite">{choice.text}</span>
+          <span className="block font-display text-xl leading-tight text-softWhite">{label ?? choice.text}</span>
           <span className="mt-2 block font-label text-[10px] uppercase tracking-[0.22em] text-silverBlue/70">
             {choice.tendency}
           </span>

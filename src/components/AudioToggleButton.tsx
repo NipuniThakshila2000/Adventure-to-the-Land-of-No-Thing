@@ -12,7 +12,7 @@ const fadeStepMs = 80;
 const maxVolume = 0.58;
 
 export function AudioToggleButton({ mood, src }: Props) {
-  const [enabled, setEnabled] = useState(false);
+  const [enabled, setEnabled] = useState(true);
   const audioRef = useRef<HTMLAudioElement | null>(null);
   const fadeRef = useRef<number | null>(null);
   const Icon = enabled ? Volume2 : VolumeX;
@@ -29,7 +29,7 @@ export function AudioToggleButton({ mood, src }: Props) {
       audio.pause();
       audioRef.current = null;
     };
-  }, []);
+  }, [src]);
 
   useEffect(() => {
     const audio = audioRef.current;
@@ -55,9 +55,7 @@ export function AudioToggleButton({ mood, src }: Props) {
       audio.volume = 0;
     }
 
-    audio.play().catch(() => {
-      setEnabled(false);
-    });
+    audio.play().catch(() => undefined);
     fadeRef.current = window.setInterval(() => {
       audio.volume = Math.min(maxVolume, audio.volume + 0.08);
       if (audio.volume >= maxVolume && fadeRef.current) window.clearInterval(fadeRef.current);
