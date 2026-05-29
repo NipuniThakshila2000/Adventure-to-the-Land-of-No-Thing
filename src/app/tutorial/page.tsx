@@ -29,6 +29,15 @@ const steps = [
   }
 ];
 
+const cmsReduxNotice = [
+  "Please do not share this with anyone who has not subscribed to CMS Redux.",
+  "This experience has been especially designed for those who have completed the last 11 sessions. It is not your average \"choose your own adventure\" game. Much like Tohu Wa Bohu, this is a journey that might be hard to 'define' - hidden from those who do not seek, but filled with familiar signs and symbols for those who have walked the path.",
+  "There are multiple endings to this journey, and none of them should be seen as simply \"wrong.\" The goal - if there ever was one - is to stop clutching, grabbing, reacting, and acting from wrath. Instead, the journey invites you to notice, release, and return with a different kind of awareness.",
+  "This was designed as a fun experiment for those who have been following CMS Redux - a new way to jog your memory, revisit familiar lessons, and experience the material in a more playful, interactive form.",
+  "As you play, you may recognize certain elements from the sessions, woven into the story in a way that invites reflection, discovery, and deeper perception.",
+  "Also, please remember that this is the first time we are creating something like this, so there may still be a few errors or rough edges. Thank you for approaching it with grace, curiosity, and the same spirit of exploration that brought you this far."
+];
+
 export default function TutorialPage() {
   return (
     <main className="min-h-screen">
@@ -45,6 +54,15 @@ export default function TutorialPage() {
             This is a choose your own adventure game. You guide Elias through mystical scenes by reading the story,
             choosing what he does next, and watching those choices shape the final ending.
           </p>
+        </motion.div>
+
+        <motion.div initial={{ opacity: 0, y: 18 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.55, delay: 0.08 }} className="glass-panel mt-8 max-w-4xl rounded-2xl p-4 sm:p-6">
+          <p className="font-label text-xs uppercase tracking-[0.26em] text-antiqueGold">CMS Redux note</p>
+          <div className="mt-4 space-y-4 text-sm leading-7 text-silverBlue sm:text-base">
+            {cmsReduxNotice.map((paragraph) => (
+              <p key={paragraph}>{paragraph}</p>
+            ))}
+          </div>
         </motion.div>
 
         <div className="mt-10 grid gap-5 lg:grid-cols-[minmax(0,1fr)_360px] lg:items-start">

@@ -216,11 +216,11 @@ export function SceneView() {
                 <blockquote className="mt-6 border-l border-antiqueGold/60 pl-4 font-display text-xl italic text-parchment sm:text-2xl">
                   {difficultyText.quote}
                 </blockquote>
-                <p className="mt-6 max-w-3xl text-base leading-7 text-silverBlue sm:text-lg sm:leading-8">{difficultyText.story}</p>
-                <div className="mt-5 rounded-lg border border-parchment/12 bg-night/35 px-4 py-3 text-sm leading-6 text-silverBlue">
-                  <span className="font-label text-[10px] uppercase tracking-[0.22em] text-antiqueGold">Image idea</span>
-                  <span className="mt-1 block">{scene.imageIdea}</span>
+                <div className="mt-4 rounded-lg border border-antiqueGold/25 bg-night/35 px-4 py-3 text-sm leading-6 text-silverBlue">
+                  <span className="font-label text-[10px] uppercase tracking-[0.22em] text-antiqueGold">{scene.bibleVerse.reference}</span>
+                  <span className="mt-1 block italic text-parchment">{scene.bibleVerse.text}</span>
                 </div>
+                <p className="mt-6 max-w-3xl text-base leading-7 text-silverBlue sm:text-lg sm:leading-8">{difficultyText.story}</p>
 
                 <div className="mt-8 grid gap-3">
                   {scene.choices.map((choice) => (

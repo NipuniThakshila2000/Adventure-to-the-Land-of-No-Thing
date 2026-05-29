@@ -22,6 +22,10 @@ export type Scene = {
   story: string;
   image: string;
   imageIdea: string;
+  bibleVerse: {
+    reference: string;
+    text: string;
+  };
   mood: "peaceful" | "dark";
   music: string;
   objects: string[];
@@ -76,6 +80,7 @@ export const scenes: Scene[] = [
       "At St. Anselm's College, Elias Vale receives the final page of Dr. Arthur Sinclair's journal. The page does not describe coordinates. It describes names hardening around reality until the Stairway can no longer be seen, like Babel rebuilt inside the mind.",
     image: "/images/scenes/scene-01-university-of-names.png",
     imageIdea: "A candlelit university archive with journal pages, brass instruments, and a faint stair-shaped light hidden in the shelves.",
+    bibleVerse: { reference: "Genesis 11:6", text: "Nothing will be restrained from them, which they have imagined to do." },
     mood: "peaceful",
     music: "/audio/peaceful-alonia.mpeg",
     objects: ["Sinclair's journal page", "Brass instruments", "Sealed maps"],
@@ -97,6 +102,7 @@ export const scenes: Scene[] = [
       "The abandoned camp lies under a silver desert sky like a wilderness of false testimony. Mara Bethany, a careful epigrapher, waits beside the crates with a pet-like silver creature called Kip curled at her feet. Both sound wise, but both urge Elias to define each object before he dares to understand it.",
     image: "/images/scenes/scene-02-desert-of-false-names.png",
     imageIdea: "A moonlit desert excavation camp with mislabeled crates, a buried doorway, Mara Bethany, and Kip near the sand.",
+    bibleVerse: { reference: "Genesis 2:19", text: "Whatsoever Adam called every living creature, that was the name thereof." },
     mood: "dark",
     music: "/audio/dark-secrets.mpeg",
     objects: ["Misnamed crates", "Broken lamp", "Half-buried doorway", "Mara Bethany's field notes", "Kip's silver collar"],
@@ -120,6 +126,7 @@ export const scenes: Scene[] = [
       "Pedestals hold ordinary objects: a cup, a rope, a compass, a watch, a veiled glass, a sealed letter, an old Bible, a skull, and a blank stone. Meaning gathers around each one like dust around a relic.",
     image: "/images/scenes/scene-03-hall-of-objects.png",
     imageIdea: "A chapel-like reliquary hall with ordinary objects on stone pedestals, warm scripture light, and long shadows.",
+    bibleVerse: { reference: "Exodus 16:20", text: "Some of them left of it until the morning, and it bred worms." },
     mood: "peaceful",
     music: "/audio/peaceful-calming-crystals.mpeg",
     objects: ["Father's watch", "Brass compass", "Old Bible", "Blank stone"],
@@ -141,6 +148,7 @@ export const scenes: Scene[] = [
       "A darkened bronze glass rises like a threshold, recalling how Paul wrote that we see through a glass dimly. Explorer. Orphan. Scholar. Son. Failure. Believer. Skeptic. Body. Mind. Elias. Each name asks to become the whole man.",
     image: "/images/scenes/scene-04-mirror-without-face.png",
     imageIdea: "A dark bronze reflective surface in a ruined sanctuary, with names glowing faintly around Elias instead of a face.",
+    bibleVerse: { reference: "1 Corinthians 13:12", text: "For now we see through a glass, darkly; but then face to face." },
     mood: "dark",
     music: "/audio/dark-how-did-we-get-here.mpeg",
     objects: ["Darkened bronze glass", "Dissolving names"],
@@ -162,6 +170,7 @@ export const scenes: Scene[] = [
       "The Shallow Void fills with half-formed cities, lost rooms, angelic silhouettes, and Sinclair's voice in the mist. Visions appear with the force of truth, like dreams before Pharaoh, then tremble as if waiting to be gripped.",
     image: "/images/scenes/scene-05-shallow-void.png",
     imageIdea: "A misted void of unfinished cities, angelic silhouettes, and dissolving journal pages floating like half-remembered dreams.",
+    bibleVerse: { reference: "1 John 4:1", text: "Believe not every spirit, but try the spirits whether they are of God." },
     mood: "dark",
     music: "/audio/dark-margin.mpeg",
     objects: ["Passing visions", "Distant Sinclair", "Unfinished city"],
@@ -183,6 +192,7 @@ export const scenes: Scene[] = [
       "Elias enters the place before naming. No temple stands there, yet every temple feels possible. His notebook drinks the ink from each word until the page is blank and luminous, like stone before the commandment is carved.",
     image: "/images/scenes/scene-06-no-thing.png",
     imageIdea: "A luminous blank place before language, with an empty notebook, white mist, and stone tablets not yet carved.",
+    bibleVerse: { reference: "1 Kings 19:12", text: "And after the fire a still small voice." },
     mood: "peaceful",
     music: "/audio/peaceful-ocean-reefs.mpeg",
     objects: ["Dissolving notebook", "Luminous mist"],
@@ -204,6 +214,7 @@ export const scenes: Scene[] = [
       "At the foot of a stairway made of stone and light, Sinclair waits older and peaceful. Like Jacob's ladder, the Stairway rises and descends at once. Elias understands that the journey was never away from the world, but through it.",
     image: "/images/scenes/scene-07-stairway-of-sinclair.png",
     imageIdea: "A Jacob's ladder-like stairway of stone and light rising and descending at once, with Sinclair holding a lantern.",
+    bibleVerse: { reference: "Genesis 28:12", text: "Behold a ladder set up on the earth, and the top of it reached to heaven." },
     mood: "peaceful",
     music: "/audio/peaceful-woodwind-reviere.mpeg",
     objects: ["Jacob's Stairway", "Sinclair's lantern"],
@@ -224,8 +235,9 @@ export const scenes: Scene[] = [
     quote: "A weighed soul is not the same as a known soul.",
     story:
       "A ruined court appears beyond the stair. Gold scales hang over a dry fountain, and Mara reads the air like a legal tablet. Kip circles the fountain and purrs that every mystery becomes safe once it is measured.",
-    image: "/images/scenes/scene-01-university-of-names.png",
+    image: "/images/scenes/scene-08-court-of-measures.png",
     imageIdea: "A moonlit ruined court with golden scales, cracked fountain stones, Mara holding a tablet, and Kip circling like a silver shadow.",
+    bibleVerse: { reference: "Daniel 5:27", text: "Thou art weighed in the balances, and art found wanting." },
     mood: "dark",
     music: "/audio/dark-secrets.mpeg",
     objects: ["Gold scales", "Cracked fountain", "Mara's tablet", "Kip's pawprints"],
@@ -244,8 +256,9 @@ export const scenes: Scene[] = [
     quote: "Wisdom offered too quickly often asks for ownership in return.",
     story:
       "A green garden grows inside the desert night. Fruit glows with names not yet spoken. Kip offers Elias one, saying it will define his purpose. Mara warns that an unnamed fruit is a wasted fruit.",
-    image: "/images/home-background.jpeg",
+    image: "/images/scenes/scene-09-garden-of-borrowed-fruit.png",
     imageIdea: "An impossible moonlit orchard in the desert with glowing fruit, stair-shaped branches, and Kip offering a luminous fruit.",
+    bibleVerse: { reference: "Genesis 3:6", text: "A tree to be desired to make one wise." },
     mood: "peaceful",
     music: "/audio/peaceful-ocean-reefs.mpeg",
     objects: ["Unbitten fruit", "Vine-wrapped stair", "Mara's pruning knife"],
@@ -264,8 +277,9 @@ export const scenes: Scene[] = [
     quote: "An echo can sound like prophecy when the heart is lonely.",
     story:
       "At an ancient well, Elias hears Sinclair, his father, Mara, and his own voice rising from the water. Kip says the deepest echo must be the truest. The bucket waits like a question lowered into darkness.",
-    image: "/images/scenes/scene-05-shallow-void.png",
+    image: "/images/scenes/scene-10-well-of-echoes.png",
     imageIdea: "A stone well under stars with glowing water, overlapping faces in the reflection, and a silver creature perched on the rim.",
+    bibleVerse: { reference: "John 10:27", text: "My sheep hear my voice, and I know them, and they follow me." },
     mood: "dark",
     music: "/audio/dark-how-did-we-get-here.mpeg",
     objects: ["Stone well", "Rope bucket", "Echoing water"],
@@ -284,8 +298,9 @@ export const scenes: Scene[] = [
     quote: "The cheapest idol is a sentence that explains everything.",
     story:
       "Under red awnings, scribes sell definitions in sealed jars. Mara negotiates with perfect courtesy. Kip insists that one jar must contain the true name of the Stairway, if Elias is brave enough to buy it.",
-    image: "/images/scenes/scene-02-desert-of-false-names.png",
+    image: "/images/scenes/scene-11-scribe-market.png",
     imageIdea: "A night bazaar of scribes with shelves of glowing jars, parchment labels, red awnings, and Mara bargaining.",
+    bibleVerse: { reference: "John 1:1", text: "In the beginning was the Word, and the Word was with God." },
     mood: "dark",
     music: "/audio/dark-margin.mpeg",
     objects: ["Sealed word jars", "Red awnings", "Ink scales"],
@@ -304,8 +319,9 @@ export const scenes: Scene[] = [
     quote: "A cup receives only because it is hollow.",
     story:
       "A small chapel waits with twelve empty cups on a stone table. No priest stands there. Mara says the cups must be assigned meanings. Kip noses one cup toward Elias and whispers that a chosen vessel must know what it is.",
-    image: "/images/scenes/scene-03-hall-of-objects.png",
+    image: "/images/scenes/scene-12-chapel-of-empty-cups.png",
     imageIdea: "A candlelit chapel with twelve empty cups on a stone table and soft light falling through a high window.",
+    bibleVerse: { reference: "Luke 22:20", text: "This cup is the new testament in my blood, which is shed for you." },
     mood: "peaceful",
     music: "/audio/peaceful-calming-crystals.mpeg",
     objects: ["Twelve empty cups", "Stone table", "Unlit candle"],
@@ -324,8 +340,9 @@ export const scenes: Scene[] = [
     quote: "Law without love becomes a wall; love without law becomes fog.",
     story:
       "A river carries blank tablets downstream. Mara wants to carve rules before they vanish. Kip leaps from stone to stone, saying that undefined water cannot be crossed.",
-    image: "/images/scenes/scene-06-no-thing.png",
+    image: "/images/scenes/scene-13-river-of-unwritten-laws.png",
     imageIdea: "A pale river carrying blank stone tablets, with stepping stones, mist, and moonlight on moving water.",
+    bibleVerse: { reference: "Jeremiah 31:33", text: "I will put my law in their inward parts, and write it in their hearts." },
     mood: "peaceful",
     music: "/audio/peaceful-alonia.mpeg",
     objects: ["Blank tablets", "River stones", "Carving chisel"],
@@ -344,8 +361,9 @@ export const scenes: Scene[] = [
     quote: "Perfect speech can still refuse heaven.",
     story:
       "A white tower rises where every sentence is precise. Mara smiles here; nothing is ambiguous. Kip sleeps peacefully on a dictionary, as if the world has finally been made obedient.",
-    image: "/images/scenes/scene-01-university-of-names.png",
+    image: "/images/scenes/scene-14-tower-of-clear-speech.png",
     imageIdea: "A white library tower with clean geometric stairs, dictionaries, and windows opening onto a stormy sky.",
+    bibleVerse: { reference: "Genesis 11:4", text: "Let us build us a city and a tower, whose top may reach unto heaven." },
     mood: "dark",
     music: "/audio/dark-secrets.mpeg",
     objects: ["White tower", "Perfect dictionary", "Locked pulpit"],
@@ -364,8 +382,9 @@ export const scenes: Scene[] = [
     quote: "A shepherd calls; a classifier counts.",
     story:
       "Under a low moon, small lights wander like sheep across a dark field. Kip darts among them, naming each one. Mara says no flock can be loved until it is numbered correctly.",
-    image: "/images/home-background.jpeg",
+    image: "/images/scenes/scene-15-shepherds-moon.png",
     imageIdea: "A dark field beneath a huge crescent moon, wandering lantern-lights like sheep, and a distant shepherd staff.",
+    bibleVerse: { reference: "Luke 15:4", text: "Doth not leave the ninety and nine... and go after that which is lost?" },
     mood: "peaceful",
     music: "/audio/peaceful-woodwind-reviere.mpeg",
     objects: ["Shepherd staff", "Wandering lights", "Moonlit grass"],
@@ -384,8 +403,9 @@ export const scenes: Scene[] = [
     quote: "A possible ending is still a temptation if it asks to be worshiped.",
     story:
       "Shelves hold endings Elias has not chosen. Mara offers to arrange them by worth. Kip points to a golden ending and says it is the one that will finally define him.",
-    image: "/images/scenes/scene-05-shallow-void.png",
+    image: "/images/scenes/scene-16-archive-of-unmade-endings.png",
     imageIdea: "An endless archive of glowing books, each showing a possible ending, with one golden book open on a central desk.",
+    bibleVerse: { reference: "Proverbs 16:9", text: "A man's heart deviseth his way: but the LORD directeth his steps." },
     mood: "dark",
     music: "/audio/dark-how-did-we-get-here.mpeg",
     objects: ["Unmade endings", "Golden book", "Dusty ladder"],
@@ -404,8 +424,9 @@ export const scenes: Scene[] = [
     quote: "The final sign was not above the world. It was mercy inside it.",
     story:
       "The Stairway opens into ordinary rooms: a classroom, a kitchen, a hospital corridor, a chapel at dawn. Sinclair lowers his lantern. Mara closes her ledger. Kip grows quiet. Elias sees that the last act is not to define the mystery, but to carry it gently among people.",
-    image: "/images/scenes/scene-07-stairway-of-sinclair.png",
+    image: "/images/scenes/scene-17-stairway-returned.png",
     imageIdea: "A luminous stairway descending into ordinary human spaces: classroom, kitchen, hospital corridor, and dawn chapel.",
+    bibleVerse: { reference: "Micah 6:8", text: "Do justly, and to love mercy, and to walk humbly with thy God." },
     mood: "peaceful",
     music: "/audio/peaceful-woodwind-reviere.mpeg",
     objects: ["Sinclair's lantern", "Closed ledger", "Quiet collar", "Open doorway"],
