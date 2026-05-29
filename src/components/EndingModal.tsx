@@ -20,19 +20,19 @@ export function EndingModal({ ending, onClose, onRestart }: Props) {
             initial={{ y: 24, opacity: 0, scale: 0.98 }}
             animate={{ y: 0, opacity: 1, scale: 1 }}
             exit={{ y: 24, opacity: 0, scale: 0.98 }}
-            className="glass-panel relative max-w-2xl overflow-hidden rounded-2xl"
+            className="glass-panel relative max-h-[90vh] max-w-2xl overflow-y-auto rounded-2xl"
           >
             <div
-              className="h-52 bg-cover bg-center"
+              className="h-40 bg-cover bg-center sm:h-52"
               style={{ backgroundImage: `linear-gradient(rgba(7,17,31,.1), rgba(7,17,31,.86)), url(${ending.image})` }}
             />
-            <div className="p-7">
+            <div className="p-5 sm:p-7">
               <p className="font-label text-xs uppercase tracking-[0.28em] text-antiqueGold">Ending unlocked</p>
-              <h2 className="mt-2 font-display text-4xl text-softWhite">{ending.title}</h2>
-              <p className="mt-4 text-lg leading-8 text-parchment">{ending.meaning}</p>
+              <h2 className="mt-2 font-display text-3xl text-softWhite sm:text-4xl">{ending.title}</h2>
+              <p className="mt-4 text-base leading-7 text-parchment sm:text-lg sm:leading-8">{ending.meaning}</p>
               <p className="mt-3 text-sm leading-6 text-silverBlue">{ending.summary}</p>
-              <div className="mt-7 flex flex-wrap gap-3">
-                <Link href="/endings" className="rounded-lg bg-antiqueGold px-5 py-3 font-semibold text-night transition hover:bg-parchment">
+              <div className="mt-7 grid gap-3 sm:flex sm:flex-wrap">
+                <Link href="/endings" className="rounded-lg bg-antiqueGold px-5 py-3 text-center font-semibold text-night transition hover:bg-parchment">
                   View Endings
                 </Link>
                 <button type="button" onClick={onRestart} className="rounded-lg border border-antiqueGold/45 px-5 py-3 text-antiqueGold transition hover:bg-antiqueGold/10">

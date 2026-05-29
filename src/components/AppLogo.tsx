@@ -3,7 +3,7 @@ export function AppLogo() {
     <img
       src="/images/cms-redux-logo.png"
       alt="CMS Redux"
-      className="h-24 w-auto md:h-32"
+      className="h-14 w-auto sm:h-20 md:h-28"
     />
   );
 }

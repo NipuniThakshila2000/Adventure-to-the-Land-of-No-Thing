@@ -22,36 +22,36 @@ export default function HomePage() {
   return (
     <main className="min-h-screen">
       <AtmosphericBackground image={heroImage} />
-      <div className="fixed left-4 top-4 z-20">
+      <div className="fixed left-3 top-3 z-20 sm:left-4 sm:top-4">
         <AppLogo />
       </div>
-      <section className="relative flex min-h-[92vh] items-center px-5 py-20">
+      <section className="relative flex min-h-[92vh] items-center px-4 pb-14 pt-28 sm:px-5 sm:py-24 md:pt-32">
         <div className="mx-auto grid w-full max-w-7xl gap-10 lg:grid-cols-[minmax(0,1fr)_420px] lg:items-end">
           <motion.div initial={{ opacity: 0, y: 24 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.7 }} className="max-w-4xl">
-            <p className="font-label text-xs uppercase tracking-[0.32em] text-antiqueGold">A mystical archaeological visual novel</p>
-            <h1 className="mt-5 font-display text-6xl leading-none text-softWhite md:text-8xl lg:text-9xl">
+            <p className="font-label text-[10px] uppercase tracking-[0.24em] text-antiqueGold sm:text-xs sm:tracking-[0.32em]">A mystical archaeological visual novel</p>
+            <h1 className="mt-5 font-display text-5xl leading-none text-softWhite sm:text-6xl md:text-8xl lg:text-9xl">
               The Stairway of NO-Thing
             </h1>
-            <p className="mt-6 max-w-2xl text-xl leading-8 text-parchment">
+            <p className="mt-6 max-w-2xl text-lg leading-7 text-parchment sm:text-xl sm:leading-8">
               An explorer searches for a vanished doctor and discovers the passage between mystery and reality.
             </p>
-            <div className="mt-9 flex flex-wrap gap-3">
-              <Link href="/game" className="inline-flex min-w-36 items-center justify-center gap-2 rounded-lg bg-antiqueGold px-6 py-3 font-semibold text-night transition hover:bg-parchment hover:shadow-gold">
+            <div className="mt-9 grid gap-3 sm:flex sm:flex-wrap">
+              <Link href="/game" className="inline-flex w-full items-center justify-center gap-2 rounded-lg bg-antiqueGold px-6 py-3 font-semibold text-night transition hover:bg-parchment hover:shadow-gold sm:w-auto sm:min-w-36">
                 <Compass className="h-5 w-5" aria-hidden="true" />
                 Play Game
               </Link>
-              <Link href="/tutorial" className="inline-flex min-w-36 items-center justify-center gap-2 rounded-lg border border-antiqueGold/45 bg-night/45 px-6 py-3 text-antiqueGold transition hover:bg-antiqueGold/10 hover:shadow-gold">
+              <Link href="/tutorial" className="inline-flex w-full items-center justify-center gap-2 rounded-lg border border-antiqueGold/45 bg-night/45 px-6 py-3 text-antiqueGold transition hover:bg-antiqueGold/10 hover:shadow-gold sm:w-auto sm:min-w-36">
                 <HelpCircle className="h-5 w-5" aria-hidden="true" />
                 Tutorial
               </Link>
-              <button type="button" onClick={handleExit} className="inline-flex min-w-36 items-center justify-center gap-2 rounded-lg border border-parchment/20 bg-night/45 px-6 py-3 text-silverBlue transition hover:border-antiqueGold/45 hover:text-antiqueGold">
+              <button type="button" onClick={handleExit} className="inline-flex w-full items-center justify-center gap-2 rounded-lg border border-parchment/20 bg-night/45 px-6 py-3 text-silverBlue transition hover:border-antiqueGold/45 hover:text-antiqueGold sm:w-auto sm:min-w-36">
                 <LogOut className="h-5 w-5" aria-hidden="true" />
                 Exit
               </button>
             </div>
           </motion.div>
 
-          <motion.div initial={{ opacity: 0, x: 24 }} animate={{ opacity: 1, x: 0 }} transition={{ duration: 0.7, delay: 0.1 }} className="glass-panel rounded-2xl p-5">
+          <motion.div initial={{ opacity: 0, x: 24 }} animate={{ opacity: 1, x: 0 }} transition={{ duration: 0.7, delay: 0.1 }} className="glass-panel rounded-2xl p-4 sm:p-5">
             <p className="font-label text-xs uppercase tracking-[0.28em] text-antiqueGold">Current expedition</p>
             <h2 className="mt-3 font-display text-3xl text-softWhite">The Ascent and the Descent</h2>
             <p className="mt-3 leading-7 text-silverBlue">
@@ -61,11 +61,11 @@ export default function HomePage() {
         </div>
       </section>
 
-      <section className="relative mx-auto max-w-7xl px-5 pb-20">
+      <section className="relative mx-auto max-w-7xl px-4 pb-16 sm:px-5 sm:pb-20">
         <div className="mb-6 flex items-end justify-between gap-4">
           <div>
             <p className="font-label text-xs uppercase tracking-[0.28em] text-antiqueGold">Seven thresholds</p>
-            <h2 className="mt-2 font-display text-4xl text-softWhite">Scene Archive</h2>
+            <h2 className="mt-2 font-display text-3xl text-softWhite sm:text-4xl">Scene Archive</h2>
           </div>
         </div>
         <div className="grid gap-4 md:grid-cols-2 xl:grid-cols-3">

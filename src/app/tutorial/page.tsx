@@ -33,28 +33,28 @@ export default function TutorialPage() {
   return (
     <main className="min-h-screen">
       <AtmosphericBackground image="/images/home-background.jpeg" intensity="soft" />
-      <div className="fixed left-4 top-4 z-20">
+      <div className="fixed left-3 top-3 z-20 sm:left-4 sm:top-4">
         <AppLogo />
       </div>
 
-      <section className="relative mx-auto flex min-h-screen w-full max-w-7xl flex-col justify-center px-5 py-32">
+      <section className="relative mx-auto flex min-h-screen w-full max-w-7xl flex-col justify-center px-4 pb-14 pt-28 sm:px-5 sm:py-32">
         <motion.div initial={{ opacity: 0, y: 18 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.55 }} className="max-w-4xl">
-          <p className="font-label text-xs uppercase tracking-[0.32em] text-antiqueGold">Tutorial mission</p>
-          <h1 className="mt-4 font-display text-5xl leading-none text-softWhite md:text-7xl">How to Play</h1>
-          <p className="mt-6 max-w-3xl text-xl leading-8 text-parchment">
+          <p className="font-label text-[10px] uppercase tracking-[0.24em] text-antiqueGold sm:text-xs sm:tracking-[0.32em]">Tutorial mission</p>
+          <h1 className="mt-4 font-display text-4xl leading-none text-softWhite sm:text-5xl md:text-7xl">How to Play</h1>
+          <p className="mt-6 max-w-3xl text-lg leading-7 text-parchment sm:text-xl sm:leading-8">
             This is a choose your own adventure game. You guide Elias through mystical scenes by reading the story,
             choosing what he does next, and watching those choices shape the final ending.
           </p>
         </motion.div>
 
         <div className="mt-10 grid gap-5 lg:grid-cols-[minmax(0,1fr)_360px] lg:items-start">
-          <motion.div initial={{ opacity: 0, y: 20 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.55, delay: 0.1 }} className="glass-panel rounded-2xl p-5 md:p-7">
-            <div className="rounded-xl border border-antiqueGold/35 bg-night/50 p-5">
-              <div className="flex items-center gap-3">
+          <motion.div initial={{ opacity: 0, y: 20 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.55, delay: 0.1 }} className="glass-panel rounded-2xl p-4 sm:p-5 md:p-7">
+            <div className="rounded-xl border border-antiqueGold/35 bg-night/50 p-4 sm:p-5">
+              <div className="flex flex-wrap items-center gap-3">
                 <span className="rounded-full border border-antiqueGold/45 px-3 py-1 font-label text-[10px] uppercase tracking-[0.24em] text-antiqueGold">Act 1</span>
                 <span className="text-sm text-silverBlue">Tutorial preview</span>
               </div>
-              <h2 className="mt-5 font-display text-4xl text-softWhite">The First Door</h2>
+              <h2 className="mt-5 font-display text-3xl text-softWhite sm:text-4xl">The First Door</h2>
               <p className="mt-4 leading-7 text-silverBlue">
                 The story appears here. When you are ready, follow the arrow to the choice cards and click the path that feels right.
               </p>
@@ -94,7 +94,7 @@ export default function TutorialPage() {
                 );
               })}
             </div>
-            <Link href="/game" className="mt-6 inline-flex w-full items-center justify-center gap-2 rounded-lg bg-antiqueGold px-5 py-3 font-semibold text-night transition hover:bg-parchment hover:shadow-gold">
+            <Link href="/game" className="mt-6 inline-flex w-full items-center justify-center gap-2 rounded-lg bg-antiqueGold px-5 py-3 text-center font-semibold text-night transition hover:bg-parchment hover:shadow-gold">
               Start the First Mission
               <ArrowRight className="h-5 w-5" aria-hidden="true" />
             </Link>

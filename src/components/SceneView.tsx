@@ -113,11 +113,11 @@ export function SceneView() {
     <main className="min-h-screen">
       <AtmosphericBackground image={scene.image} />
 
-      <div className="fixed left-4 top-4 z-20">
+      <div className="fixed left-3 top-3 z-20 sm:left-4 sm:top-4">
         <AppLogo />
       </div>
 
-      <div className="fixed right-4 top-4 z-20 flex gap-2">
+      <div className="fixed right-3 top-3 z-20 flex gap-2 sm:right-4 sm:top-4">
         <AudioToggleButton mood={scene.mood} src={scene.music} />
         <button
           type="button"
@@ -129,7 +129,7 @@ export function SceneView() {
         </button>
       </div>
 
-      <div className="mx-auto grid min-h-screen max-w-[1560px] gap-5 px-4 py-20 lg:grid-cols-[300px_minmax(0,1fr)_320px] lg:px-6">
+      <div className="mx-auto grid min-h-screen max-w-[1560px] gap-5 px-3 pb-12 pt-24 sm:px-4 sm:pt-28 lg:grid-cols-[300px_minmax(0,1fr)_320px] lg:px-6 lg:py-20">
         <aside className="glass-panel hidden rounded-2xl p-5 lg:block">
           <div className="mb-5">
             <p className="font-label text-xs uppercase tracking-[0.28em] text-antiqueGold">Difficulty</p>
@@ -196,10 +196,10 @@ export function SceneView() {
               className="glass-panel overflow-hidden rounded-2xl"
             >
               <div
-                className="min-h-[260px] bg-cover bg-center md:min-h-[360px]"
+                className="min-h-[200px] bg-cover bg-center sm:min-h-[260px] md:min-h-[360px]"
                 style={{ backgroundImage: `linear-gradient(rgba(7,17,31,.08), rgba(7,17,31,.86)), url(${scene.image})` }}
               />
-              <div className="p-5 md:p-8">
+              <div className="p-4 sm:p-5 md:p-8">
                 <div className="flex flex-wrap items-center gap-3">
                   <span className="rounded-full border border-antiqueGold/40 px-3 py-1 font-label text-[10px] uppercase tracking-[0.24em] text-antiqueGold">
                     Act {scene.id}
@@ -211,12 +211,12 @@ export function SceneView() {
                     Archive {archiveCount}
                   </span>
                 </div>
-                <h1 className="mt-5 font-display text-5xl leading-none text-softWhite md:text-7xl">{scene.title}</h1>
-                <p className="mt-2 font-label text-xs uppercase tracking-[0.3em] text-antiqueGold">{scene.imageTitle}</p>
-                <blockquote className="mt-6 border-l border-antiqueGold/60 pl-4 font-display text-2xl italic text-parchment">
+                <h1 className="mt-5 font-display text-4xl leading-none text-softWhite sm:text-5xl md:text-7xl">{scene.title}</h1>
+                <p className="mt-2 font-label text-[10px] uppercase tracking-[0.22em] text-antiqueGold sm:text-xs sm:tracking-[0.3em]">{scene.imageTitle}</p>
+                <blockquote className="mt-6 border-l border-antiqueGold/60 pl-4 font-display text-xl italic text-parchment sm:text-2xl">
                   {difficultyText.quote}
                 </blockquote>
-                <p className="mt-6 max-w-3xl text-lg leading-8 text-silverBlue">{difficultyText.story}</p>
+                <p className="mt-6 max-w-3xl text-base leading-7 text-silverBlue sm:text-lg sm:leading-8">{difficultyText.story}</p>
 
                 <div className="mt-8 grid gap-3">
                   {scene.choices.map((choice) => (
@@ -259,13 +259,13 @@ export function SceneView() {
               initial={{ y: 24, opacity: 0 }}
               animate={{ y: 0, opacity: 1 }}
               exit={{ y: 24, opacity: 0 }}
-              className="glass-panel relative max-w-xl rounded-2xl p-7"
+              className="glass-panel relative max-h-[88vh] max-w-xl overflow-y-auto rounded-2xl p-5 sm:p-7"
             >
               <div className="flex items-center gap-2 text-antiqueGold">
                 <BookOpen className="h-5 w-5" />
                 <p className="font-label text-xs uppercase tracking-[0.26em]">False Path</p>
               </div>
-              <h2 className="mt-3 font-display text-4xl text-softWhite">{activeFalsePath.title}</h2>
+              <h2 className="mt-3 font-display text-3xl text-softWhite sm:text-4xl">{activeFalsePath.title}</h2>
               <div className="mt-5 grid gap-2">
                 {activeFalsePath.choices.map((item) => (
                   <div key={item} className="rounded-lg border border-parchment/12 bg-night/35 px-4 py-3 text-sm text-silverBlue">
