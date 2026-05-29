@@ -78,8 +78,8 @@ export function SceneView() {
       return;
     }
 
-    if (scene.id === 7) {
-      const finalState = { ...base, currentScene: 7 };
+    if (scene.id === scenes.length) {
+      const finalState = { ...base, currentScene: scenes.length };
       const unlockedEnding = endingForState(finalState);
       const unlockedEndings = Array.from(new Set([...finalState.unlockedEndings, unlockedEnding]));
       setProgress({ ...finalState, unlockedEndings });
@@ -217,6 +217,10 @@ export function SceneView() {
                   {difficultyText.quote}
                 </blockquote>
                 <p className="mt-6 max-w-3xl text-base leading-7 text-silverBlue sm:text-lg sm:leading-8">{difficultyText.story}</p>
+                <div className="mt-5 rounded-lg border border-parchment/12 bg-night/35 px-4 py-3 text-sm leading-6 text-silverBlue">
+                  <span className="font-label text-[10px] uppercase tracking-[0.22em] text-antiqueGold">Image idea</span>
+                  <span className="mt-1 block">{scene.imageIdea}</span>
+                </div>
 
                 <div className="mt-8 grid gap-3">
                   {scene.choices.map((choice) => (

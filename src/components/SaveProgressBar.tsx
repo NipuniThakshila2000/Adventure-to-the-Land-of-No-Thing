@@ -1,10 +1,10 @@
 "use client";
 
 import { CheckCircle2 } from "lucide-react";
-import { ProgressState } from "@/lib/story";
+import { ProgressState, scenes } from "@/lib/story";
 
 export function SaveProgressBar({ progress }: { progress: ProgressState }) {
-  const completion = Math.round(((progress.currentScene - 1) / 6) * 100);
+  const completion = Math.round(((progress.currentScene - 1) / Math.max(1, scenes.length - 1)) * 100);
 
   return (
     <div className="glass-panel rounded-lg px-4 py-3">
