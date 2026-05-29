@@ -12,3 +12,5 @@ next-direct.out.log
 next-direct.err.log
 dev-server.out.log
 dev-server.err.log
+
+.vercel

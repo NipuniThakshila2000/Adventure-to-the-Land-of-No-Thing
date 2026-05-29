@@ -2,7 +2,7 @@
 
 import Link from "next/link";
 import { motion } from "framer-motion";
-import { Compass, LogOut } from "lucide-react";
+import { Compass, HelpCircle, LogOut } from "lucide-react";
 import { AppLogo } from "@/components/AppLogo";
 import { AtmosphericBackground } from "@/components/AtmosphericBackground";
 import { SceneCard } from "@/components/SceneCard";
@@ -39,6 +39,10 @@ export default function HomePage() {
               <Link href="/game" className="inline-flex min-w-36 items-center justify-center gap-2 rounded-lg bg-antiqueGold px-6 py-3 font-semibold text-night transition hover:bg-parchment hover:shadow-gold">
                 <Compass className="h-5 w-5" aria-hidden="true" />
                 Play Game
+              </Link>
+              <Link href="/tutorial" className="inline-flex min-w-36 items-center justify-center gap-2 rounded-lg border border-antiqueGold/45 bg-night/45 px-6 py-3 text-antiqueGold transition hover:bg-antiqueGold/10 hover:shadow-gold">
+                <HelpCircle className="h-5 w-5" aria-hidden="true" />
+                Tutorial
               </Link>
               <button type="button" onClick={handleExit} className="inline-flex min-w-36 items-center justify-center gap-2 rounded-lg border border-parchment/20 bg-night/45 px-6 py-3 text-silverBlue transition hover:border-antiqueGold/45 hover:text-antiqueGold">
                 <LogOut className="h-5 w-5" aria-hidden="true" />
